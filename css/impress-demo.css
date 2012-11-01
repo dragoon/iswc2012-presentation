@@ -700,6 +700,7 @@ h2 {
     font-size: 70%;
     bottom: 10px;
     opacity: .6;
+    left: 60px;
 }
 
 .section {
@@ -708,3 +709,45 @@ h2 {
     top: 10px;
     opacity: .6;
 }
+
+.grey {
+    opacity: .6;
+}
+
+.found-concepts {
+    line-height: 1;
+}
+
+.label {
+    padding: 2px 5px 3px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    font-weight: bold;
+    white-space: nowrap;
+    text-shadow: rgba(255, 255, 255, 0.74902) 0 1px 1px;
+    background-color: #eee;
+    border: 2px solid #CCC;
+    color: #333;
+    margin-right: 5px;
+    margin-bottom: 2px;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.goodlabel {
+    padding: 4px 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    background-color: #9bea82;
+}
+
+.badlabel {
+    padding: 4px 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    background-color: #ff999b;
+}
+
