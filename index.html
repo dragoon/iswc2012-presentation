@@ -131,7 +131,7 @@
             <li><strong>Precision@k</strong> - number of relevant tags out of <em>k</em> recommended tags</li>
             <li><strong>Recall@k</strong> - ratio between the number of relevant tags and the total number of relevant tags</li>
             <li><strong>R-precision</strong> - Precision@R, where R is the total number of relevant tags</li>
-            <li><strong>Average precision</strong></li>
+            <li><strong>Average precision</strong> - average of Precision@k values over the set of total relevant tags</li>
         </ul>
         <div>Overall: Mean Average Precision (MAP)</div>
         <span class="pagenum">Page 11/19</span>
@@ -139,19 +139,66 @@
     <div class="step slide" data-x="13850" data-y="-1500">
         <h3 class="section">Experimental settings</h3>
         <h2>Datasets</h2>
-        <p>In the experiments we used <strong>real dataset</strong> collected by ScienceWISE system.</p>
-        <ul>
+        <p>In the experiments we used <strong>real dataset</strong> collected by ScienceWISE system.<br></p>
+        <p style="margin-bottom: 0">Data for tag recommendation:</p>
+        <ul style="margin-top: 0">
             <li>Kept data from top-5 most active users</li>
-            <li>16 725 papers, 15</li>
+            <li>1376 papers</li>
+            <li>15 083 total tags, 2 157 distinct concepts</li>
         </ul>
+        <p style="margin-bottom: 0">Data for tag disambiguation:</p>
+        <ul style="margin-top: 0">
+            <li>2 400 papers from 6 different categories on arXiv.org, equally distributed</li>
+        </ul>
+        <p>Data available at <a href="http://sciencewise.info/media/iswc/">sciencewise.info/media/iswc/</a></p>
         <span class="pagenum">Page 12/19</span>
     </div>
     <div class="step slide" data-x="15200" data-y="-1500">
         <h3 class="section">Experimental settings</h3>
         <h2>Tecniques</h2>
+        <p>Baseline in SW: TF-IDF weighting on top of the ontology</p>
+        <ul>
+            <li><strong>TF</strong> - ranks tags by counting the number of tags in the article</li>
+            <li><strong>TF-IDF</strong> - extends previous one by applying IDF score, score is calculated on per category basis</li>
+            <li><strong>TF + SimpleIDF</strong> - excludes too general concepts using the <em>simple</em> attribute,
+                created manually by experts</li>
+            <li><strong>TF + Title</strong> - promotes tags from the paper title in the final ranking</li>
+            <li><strong>TF-IDF + Title</strong></li>
+        </ul>
         <span class="pagenum">Page 13/19</span>
     </div>
-
+    <div class="step slide" data-x="16550" data-y="-1500">
+        <h3 class="section">Experimental settings</h3>
+        <h2>Tecniques (continued)</h2>
+        <ul>
+            <li><strong>Combined</strong> - combines TF-IDF + Title, but utilizes simpleIDF to reduce computational complexity </li>
+            <li><strong>Ont-depth</strong> - promotes more specific concepts using the concepts' depth in the ontology</li>
+            <li><strong>Ont-neighbor</strong> - promotes neighbors of highly ranked concepts</li>
+        </ul>
+        <span class="pagenum">Page 14/19</span>
+    </div>
+    <div class="step slide" data-x="17900" data-y="-1500">
+        <h3 class="section">Results</h3>
+        <h2 style="margin-bottom: 0">Precision/Recall graph</h2>
+        <img src="img/prec_rec_graph.svg" height="550">
+        <span class="pagenum">Page 15/19</span>
+    </div>
+    <div class="step slide" data-x="19250" data-y="-1500">
+        <h3 class="section">Results</h3>
+        <h2 style="margin-bottom: 0">Precision@k graph</h2>
+        <img src="img/prec_k_graph.svg" height="550">
+        <span class="pagenum">Page 16/19</span>
+    </div>
+    <div class="step slide" data-x="20600" data-y="-1500">
+        <h3 class="section">Results</h3>
+        <h2>Summary</h2>
+        <span class="pagenum">Page 17/19</span>
+    </div>
+    <div class="step slide" data-x="21950" data-y="-1500">
+        <h3 class="section">Results</h3>
+        <h2>Tag disambiguation</h2>
+        <span class="pagenum">Page 18/19</span>
+    </div>
 </div>
 <script src="js/impress.js"></script>
 <script>impress().init();</script>
